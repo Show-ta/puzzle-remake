@@ -1,0 +1,73 @@
+<%= stylesheet_link_tag 'numpre' %>
+
+<h1>問題投稿ページ</h1>
+
+<div><p>守っていただきたい問題のルール</p></div>
+<ul>
+    <li>数独本来のルールを守ってください。</li>
+    <li>仮定法・背理法が必要になる問題は投稿しないでください。</li>
+    <li>空欄部分はアンダーバーにしてください。</li>
+    <li>スペースキーを使ってしまうと、問題を読み込めない場合があります。</li>
+    <li>もし詰まってしまった場合、または仮定法を使用しなければ進めない箇所がある時はコメントしてください。ルール違反の問題は迅速に削除させていただきます。</li>
+    <li>入力したデータの保存方法に苦戦しております。81個のカラムを作成するしかないのかと。<br>そのため、現在、入力フォームが3*3の魔方陣の様になっています。ご了承ください</li>
+    <li>下のボタンで数字入力ができるようにしたいのですが、方法がまだ見つかっていないので機能しておりません。</li>
+</ul>
+<%= form_with url:numpre_create_path do %>
+    <div>
+    <p>タイトル</p>
+    <input name="titlee" class="title-form">
+    <p>問題</p>
+
+    
+    </div>
+
+    <table bgcolor="#cceeee" border="1" cellspacing="0" id="Main_panel" style="cursor: pointer; margin: 0 auto;">
+        <tbody>
+            <tr>
+                <td>
+                    <table width="110" bgcolor="#cceeee" cellspacing="1" style="font-size:20pt; font-weight:700;">
+                        <tbody>
+                            <tr>
+                                <td  bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><input type="number" name="number1" min="0" max="9" style="margin:0px; height:90%;  font-size:99%;"></td>
+                                <td  bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><input type="number" name="number2" min="0" max="9" style="margin:0px; height:90%;  font-size:99%;"></td>
+                                <td  bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><input type="number" name="number3" min="0" max="9" style="margin:0px; height:90%;  font-size:99%;"></td>
+                            </tr>
+                            <tr>
+                                <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><input type="number" name="number4" min="0" max="9" style="margin:0px; height:90%;  font-size:99%;"></td>
+                                <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><input type="number" name="number5" min="0" max="9" style="margin:0px; height:90%;  font-size:99%;"></td>
+                                <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><input type="number" name="number6" min="0" max="9" style="margin:0px; height:90%;  font-size:99%;"></td>
+                            </tr>
+                            <tr>
+                                <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><input type="number" name="number7" min="0" max="9" style="margin:0px; height:90%;  font-size:99%;"></td>
+                                <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><input type="number" name="number8" min="0" max="9" style="margin:0px; height:90%;  font-size:99%;"></td>
+                                <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><input type="number" name="number9" min="0" max="9" style="margin:0px; height:90%;  font-size:99%;"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <table width="330" bgcolor="#cceeee" cellspacing="1" style="cursor: pointer; font-size:20pt; font-weight:700; margin: 0 auto;">
+        <tbody>
+            <tr>
+                <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)" onmouseover="changeBC(1)" onmouseout="changeBC(0)">1
+                </td>
+                <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)">2</td>
+                <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)">3</td>
+
+        
+                <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)">4</td>
+                <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)">5</td>
+                <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)">6</td>
+        
+    
+                <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)">7</td>
+                <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)">8</td>
+                <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)">9</td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="submit" value="完成" style="width:90%; height:1000px; font-size:30px;">
+<% end %>

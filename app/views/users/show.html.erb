@@ -1,0 +1,9 @@
+<h1>ユーザーさんのページ（工事中）</h1>
+
+<% current_user=User.find_by(id: session[:user_id]) %>
+あなたは<%= current_user.name %>さんです。
+<br><br>
+ユーザーさんが作成した問題の一覧<br>
+お気に入り登録した作品<br>
+解答済みの作品<br>
+等を表示できるようにする予定です。

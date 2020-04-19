@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Puzzle</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <% current_user=User.find_by(id: session[:user_id]) %>
+    <div class="link-btn">
+      <div class="link-list">
+        <%= link_to('TOPページへ',numpre_index_path) %>
+      </div>
+      <div class="link-list">
+        <%= link_to('About',about_path) %>
+      </div>
+    <% if session[:user_id] %>
+      
+      <div class="link-list">
+        ユーザー名:<%= link_to(current_user.name, "/users/#{current_user.id}/show") %></div>
+      <div class="link-list"><%= link_to('logout',logout_path) %>
+      </div>
+    <% else %>
+      <div class="link-list">
+        <%= link_to("Sign_in",login_path) %> 
+      </div>
+    <% end %>
+    </div>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

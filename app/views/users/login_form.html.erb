@@ -1,0 +1,14 @@
+<h1>ログインフォーム</h1>
+<%= form_with url:login_path do %>
+    <% if @error_message %>
+        <%= @error_message %>
+    <% end %>
+    
+    <p>ユーザー名</p>
+    <input name="name">
+
+    <p>パスワード</p>
+    <input name="password" type="password">
+    <br>
+    <input type="submit" value="ログイン">
+<% end %>

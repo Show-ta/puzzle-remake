@@ -1,0 +1,2 @@
+class Numpre < ApplicationRecord
+end
