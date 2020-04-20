@@ -1,5 +1,9 @@
-<h1>作成した問題:<%= @numpre.title %></h1>
-
+<h1>作成した問題:
+<% if @numpre.title.nil? %>
+    <h2>名無し</h2>
+<% else %>
+    <%= @numpre.title %></h1>
+<% end %>
 <br>
 <br>
 
@@ -30,3 +34,25 @@
         </tr>
     </tbody>
 </table>
+
+<% current_user=User.find_by(id: session[:user_id]) %>
+<%= current_user.id %>
+<p>kai</p>
+<%= @numpre.user %>
+<p>kaa</p>
+<% if current_user %>
+    <% if current_user.id == @numpre.user %>
+        <span>こんにちは、問題の作者の</span>
+    <% end %>
+    "<%= current_user.name %>"さん。
+<% else %>
+    <div> あなたはゲストさんです。</div>
+<% end %>
+
+<div>
+    <% if current_user.id == @numpre.user then %>
+        <%= link_to '削除',"/numpre/destroy/#{@numpre.id}",{method:"post"}  %>
+        <%= link_to '編集', "/numpre/edit/#{@numpre.id}" %>
+    <% end %>
+</div>
+

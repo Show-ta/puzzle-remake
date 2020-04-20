@@ -13,7 +13,11 @@ Rails.application.routes.draw do
   #numpre_controllerのcreateアクションを呼び出す
   get 'numpre/show' =>'numpre#show'
   get 'numpre/new' =>'numpre#new'
-  post 'numpre/create' => 'numpre#create'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get 'numpre/:id' =>'numpre#show'
+  get 'numpre/edit/:id' => 'numpre#edit'
+  post 'numpre/:id/update' => 'numpre#update'
+  post 'numpre/destroy/:id' => 'numpre#destroy'
+  post 'numpre/create' => 'numpre#create'
 end

@@ -7,6 +7,9 @@ class CreateNumpres < ActiveRecord::Migration[6.0]
       t.text :questionx
       t.text :title
       t.timestamps
+
     end
   end
+
+
 end

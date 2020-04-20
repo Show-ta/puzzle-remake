@@ -1,6 +1,5 @@
-<%= stylesheet_link_tag 'numpre' %>
 
-<h1>問題投稿ページ</h1>
+<h1>問題編集ページ</h1>
 
 <div><p>守っていただきたい問題のルール</p></div>
 <ul>
@@ -12,10 +11,12 @@
     <li>入力したデータの保存方法に苦戦しております。81個のカラムを作成するしかないのかと。<br>そのため、現在、入力フォームが3*3の魔方陣の様になっています。ご了承ください</li>
     <li>下のボタンで数字入力ができるようにしたいのですが、方法がまだ見つかっていないので機能しておりません。</li>
 </ul>
-<%= form_with url:numpre_create_path do %>
+<%= form_with url:"/numpre/#{@numpre.id}/update" do %>
+    
     <div>
     <p>タイトル</p>
-    <input name="title" class="title-form">
+    <%= @numpre.user %>
+    <%= @numpre.title %>
     <p>問題</p>
 
     
@@ -28,19 +29,19 @@
                     <table width="110" bgcolor="#cceeee" cellspacing="1" style="font-size:20pt; font-weight:700;">
                         <tbody>
                             <tr>
-                                <td  bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><input type="number" name="number1" min="0" max="9" style="margin:0px; height:90%;  font-size:99%;"></td>
-                                <td  bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><input type="number" name="number2" min="0" max="9" style="margin:0px; height:90%;  font-size:99%;"></td>
-                                <td  bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><input type="number" name="number3" min="0" max="9" style="margin:0px; height:90%;  font-size:99%;"></td>
+                                <td  bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><input type="number" name="number1" min="0" max="9" style="margin:0px; height:90%;  font-size:99%;" value="<%= @numpre.number1 %>"></td>
+                                <td  bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><input type="number" name="number2" min="0" max="9" style="margin:0px; height:90%;  font-size:99%;" value="<%= @numpre.number2 %>"></td>
+                                <td  bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><input type="number" name="number3" min="0" max="9" style="margin:0px; height:90%;  font-size:99%;" value="<%= @numpre.number3 %>"></td>
                             </tr>
                             <tr>
-                                <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><input type="number" name="number4" min="0" max="9" style="margin:0px; height:90%;  font-size:99%;"></td>
-                                <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><input type="number" name="number5" min="0" max="9" style="margin:0px; height:90%;  font-size:99%;"></td>
-                                <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><input type="number" name="number6" min="0" max="9" style="margin:0px; height:90%;  font-size:99%;"></td>
+                                <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><input type="number" name="number4" min="0" max="9" style="margin:0px; height:90%;  font-size:99%;" value="<%= @numpre.number4 %>"></td>
+                                <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><input type="number" name="number5" min="0" max="9" style="margin:0px; height:90%;  font-size:99%;" value="<%= @numpre.number5 %>"></td>
+                                <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><input type="number" name="number6" min="0" max="9" style="margin:0px; height:90%;  font-size:99%;" value="<%= @numpre.number6 %>"></td>
                             </tr>
                             <tr>
-                                <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><input type="number" name="number7" min="0" max="9" style="margin:0px; height:90%;  font-size:99%;"></td>
-                                <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><input type="number" name="number8" min="0" max="9" style="margin:0px; height:90%;  font-size:99%;"></td>
-                                <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><input type="number" name="number9" min="0" max="9" style="margin:0px; height:90%;  font-size:99%;"></td>
+                                <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><input type="number" name="number7" min="0" max="9" style="margin:0px; height:90%;  font-size:99%;" value="<%= @numpre.number7 %>"></td>
+                                <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><input type="number" name="number8" min="0" max="9" style="margin:0px; height:90%;  font-size:99%;" value="<%= @numpre.number8 %>"></td>
+                                <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><input type="number" name="number9" min="0" max="9" style="margin:0px; height:90%;  font-size:99%;" value="<%= @numpre.number9 %>"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -69,5 +70,5 @@
             </tr>
         </tbody>
     </table>
-    <input type="submit" value="完成" style="width:90%; height:1000px; font-size:30px;">
+    <input type="submit" value="更新" style="width:90%; height:1000px; font-size:30px;">
 <% end %>
