@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'users/new'
+  get 'users/new' => 'users#new'
   get 'users/show'
   get 'signup' =>'users#new'
   post 'users/new' =>'users#new'
@@ -14,10 +14,19 @@ Rails.application.routes.draw do
   get 'numpre/show' =>'numpre#show'
   get 'numpre/new' =>'numpre#new'
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  get 'numpre/:id' =>'numpre#show'
+  get 'numpre/input' =>'numpre#input'
+  post 'numpre/test_create' => 'numpre#test_create'
+  get 'numpre/test/show' => 'numpre#test_show'
+
+
   get 'numpre/edit/:id' => 'numpre#edit'
   post 'numpre/:id/update' => 'numpre#update'
   post 'numpre/destroy/:id' => 'numpre#destroy'
   post 'numpre/create' => 'numpre#create'
+
+  get 'numpre/can_answer' => 'numpre#can_answer'
+  post 'numpre/answer_test' =>'numpre#answer_test'
+
+
+  get 'numpre/:id' =>'numpre#test_show'
 end

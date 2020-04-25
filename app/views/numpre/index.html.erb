@@ -2,17 +2,20 @@
 
 <h1>論理的な思考無き数独は数独にあらず</h1>
 <h2>仮定法を使わずに解ける数独のみが集まるサイトです</h2>
-<%= link_to '問題作成',numpre_new_path %>
+<% link_to '問題作成',numpre_new_path %>
 <%= link_to 'ユーザー登録',users_new_path %>
 <%= link_to 'ログイン',login_path %>
+<%= link_to '数独作成ページ',numpre_input_path %>
+<%#= link_to 'tokeru',"/numpre/can_answer" %>
+
 <h1>問題一覧</h1>
 
 
  <% @numpre.each do |numpre| %>
     <div>
         <%= link_to "#{numpre.title}" , "/numpre/#{numpre.id}" %>
-        
     </div>
+    
  <% end %>
 
  

@@ -4,11 +4,10 @@ class UsersController < ApplicationController
     @user.name = params[:name]
     @user.password = params[:password]
     @user.save
-    if @user.save
-      session[:user_id]=@user.id
-      flash[:notice]="登録完了しました"
-      redirect_to("/numpre/index")
-    end
+    session[:user_id]=@user.id
+    flash[:notice]="登録完了しました"
+  
+    
   end
 
   def move

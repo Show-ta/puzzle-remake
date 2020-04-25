@@ -1,9 +1,6 @@
-<h1>作成した問題:
-<% if @numpre.title.nil? %>
-    <h2>名無し</h2>
-<% else %>
-    <%= @numpre.title %></h1>
-<% end %>
+<h1>作成された問題:
+
+
 <br>
 <br>
 
@@ -36,12 +33,11 @@
 </table>
 
 <% current_user=User.find_by(id: session[:user_id]) %>
-<%= current_user.id %>
-<p>kai</p>
-<%= @numpre.user %>
-<p>kaa</p>
+
+
+
 <% if current_user %>
-    <% if current_user.id == @numpre.user %>
+    <% if current_user.id == @numpre.user_id %>
         <span>こんにちは、問題の作者の</span>
     <% end %>
     "<%= current_user.name %>"さん。
@@ -50,9 +46,16 @@
 <% end %>
 
 <div>
-    <% if current_user.id == @numpre.user then %>
-        <%= link_to '削除',"/numpre/destroy/#{@numpre.id}",{method:"post"}  %>
-        <%= link_to '編集', "/numpre/edit/#{@numpre.id}" %>
+    <% if current_user %>
+        <% if current_user.id == @numpre.user_id then %>
+            <%= link_to '削除',"/numpre/destroy/#{@numpre.id}",{method:"post"}  %>
+            <%= link_to '編集', "/numpre/edit/#{@numpre.id}" %>
+        <% else %>
+            <p>こちらの問題は別の人が作った物ですので、編集はできません</p>
+        <% end %>
+    <% else %>
+        <p>ゲストさんは問題の編集はできません。</p>
     <% end %>
+    
 </div>
 

@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  c_a: 1
+  c_b: 1
+  c_c: 1
+  c_d: 1
+  c_e: 1
+  c_f: 1
+  c_g: 1
+  c_h: 1
+  c_i: 1
+
+two:
+  c_a: 1
+  c_b: 1
+  c_c: 1
+  c_d: 1
+  c_e: 1
+  c_f: 1
+  c_g: 1
+  c_h: 1
+  c_i: 1
