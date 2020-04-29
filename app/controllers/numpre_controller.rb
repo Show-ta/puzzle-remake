@@ -8,74 +8,16 @@ class NumpreController < ApplicationController
 
 
   def create
-    @numpre=Numpre.new(title: params[:title],
-    number1: params[:number1],
-    number2: params[:number2],
-    number3: params[:number3],
-    number4: params[:number4],
-    number5: params[:number5],
-    number6: params[:number6],
-    number7: params[:number7],
-    number8: params[:number8],
-    number9: params[:number9]
-    )
-    #ログインしているなら作者名を登録する
-    if session[:user_id]
-      @user=User.find_by(id: session[:user_id])
-      @numpre.user = @user.name
-      @numpre.user_id = @user.id
-    end
-    @numpre.save
-    redirect_to("/numpre/index")
-  end
-
-  def new
-    
-  end
-
-  def show
-    find_numpre()
-    if @numpre.nil?
-      redirect_to('/numpre/index')
-    end
-  end
-
-  def edit
-    find_numpre()
-  end
-
-  def update
-    find_numpre()
-    @numpre.update(
-    number1: params[:number1],
-    number2: params[:number2],
-    number3: params[:number3],
-    number4: params[:number4],
-    number5: params[:number5],
-    number6: params[:number6],
-    number7: params[:number7],
-    number8: params[:number8],
-    number9: params[:number9]
-
-    )
-    @numpre.save
-    redirect_to('/numpre/index')
-  end
-
-  def destroy
-    find_numpre()
-    @numpre.destroy
-    redirect_to("/numpre/index")
-  end
-
-  def test_create
     @numpre=Numpre.create(title: params[:title])
+    if @numpre.title == ""
+      @numpre.title = @numpre.id 
+    end
     if session[:user_id]
       @user=User.find_by(id: session[:user_id])
-      @numpre.user = @user.name
+      @numpre.creater = @user.name
       @numpre.user_id = @user.id
     end
-    @numpre.save
+    @numpre.save!
     @element_a=ElementA.create(
       a_a: params[:a_a],
       a_b: params[:a_b],
@@ -196,41 +138,64 @@ class NumpreController < ApplicationController
     redirect_to("/numpre/index")
   end
 
+  def new
+    
+  end
 
-  def showv2
+  def show
+    find_numpre()
+    if @numpre.nil?
+      redirect_to('/numpre/index')
+    end
+  end
+
+  def edit
     find_numpre()
   end
+
+  def update
+    find_numpre()
+    find_elements()
+    @element_a.update(
+      a_a: params[:a_a],
+      a_b: params[:a_b],
+      a_c: params[:a_c],
+      a_d: params[:a_d],
+      a_e: params[:a_e],
+      a_f: params[:a_f],
+      a_g: params[:a_g],
+      a_h: params[:a_h],
+      a_i: params[:a_i])
+    @element_a.save
+    redirect_to('/numpre/index')
+  end
+
+  def destroy
+    find_numpre()
+    @numpre.destroy
+    redirect_to("/numpre/index")
+  end
+
+
+
+
+
+  private
 
   def find_numpre
     @numpre = Numpre.find_by(id: params[:id])
   end
 
-  def can_answer
-  end
-
-  def answer_test
-
-
-  end
-
-
-
-
-
-
-
-
-
-
-
-
-
- private
-
-  def numpre_data
-    params.permit(:title,
-    :number1,:number2,:number3,:number4,:number5,:number6,:number7,:number8,:number9)
+  def find_elements
+    @element_a = ElementA.find_by(numpre_id: params[:id])
+    @element_b = ElementB.find_by(numpre_id: params[:id])
+    @element_c = ElementC.find_by(numpre_id: params[:id])
+    @element_d = ElementD.find_by(numpre_id: params[:id])
+    @element_e = ElementE.find_by(numpre_id: params[:id])
+    @element_f = ElementF.find_by(numpre_id: params[:id])
+    @element_g = ElementG.find_by(numpre_id: params[:id])
+    @element_h = ElementH.find_by(numpre_id: params[:id])
+    @element_i = ElementI.find_by(numpre_id: params[:id])
   end
 
 end
-

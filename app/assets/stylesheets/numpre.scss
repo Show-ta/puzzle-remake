@@ -2,9 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .title-form{
+    border:1px solid black;
     font-size:15px;
-    height:5%;
-    width:5%;
+    height:15px;
+    width:100px;
 }
 
 .form{
@@ -12,3 +13,52 @@
     width:270px;
     height:350px;
 }
+
+.game_panel{
+    position:relative;
+
+    width:100%;
+    
+}
+.numpre_panel{
+    margin:0 auto;
+    border: 2px solid black;
+    height:100%;
+}
+
+.tr{
+    border:10px solid red;
+}
+
+.inp{
+    height:35px;
+    width:40px;
+    font-size:32px;
+    text-align:center;
+}
+
+
+.number_cell{
+    font-weight:700;
+    height:35px;
+    width:40px;
+    margin:0;
+    padding:0;
+    border-bottom:1px solid #858585;
+    border-right:1px solid #858585;
+}
+
+
+
+.game_line{
+
+    border-bottom:2px solid black;
+}
+.number_cell:nth-child(3n){
+    border-right:2px solid black;
+}
+
+.number_cell:nth-child(9n){
+    border-right:0px;
+}
+

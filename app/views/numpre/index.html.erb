@@ -5,15 +5,16 @@
 <% link_to '問題作成',numpre_new_path %>
 <%= link_to 'ユーザー登録',users_new_path %>
 <%= link_to 'ログイン',login_path %>
-<%= link_to '数独作成ページ',numpre_input_path %>
-<%#= link_to 'tokeru',"/numpre/can_answer" %>
+<%= link_to '数独作成ページ',numpre_new_path %>
+
 
 <h1>問題一覧</h1>
 
 
  <% @numpre.each do |numpre| %>
     <div>
-        <%= link_to "#{numpre.title}" , "/numpre/#{numpre.id}" %>
+        <%= link_to "#{numpre.title}" , "/numpre/show/#{numpre.id}" %>
+        <%= "#{numpre.creater}" %>
     </div>
     
  <% end %>

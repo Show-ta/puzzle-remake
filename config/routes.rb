@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root 'numpre#index'
+
   get 'users/new' => 'users#new'
   get 'users/show'
   get 'signup' =>'users#new'
@@ -15,18 +18,18 @@ Rails.application.routes.draw do
   get 'numpre/new' =>'numpre#new'
 
   get 'numpre/input' =>'numpre#input'
-  post 'numpre/test_create' => 'numpre#test_create'
-  get 'numpre/test/show' => 'numpre#test_show'
+  post 'numpre/create' => 'numpre#create'
+  get 'numpre/show/:id' => 'numpre#show'
 
 
   get 'numpre/edit/:id' => 'numpre#edit'
-  post 'numpre/:id/update' => 'numpre#update'
+  post 'numpre/update' => 'numpre#update'
   post 'numpre/destroy/:id' => 'numpre#destroy'
-  post 'numpre/create' => 'numpre#create'
+  
 
   get 'numpre/can_answer' => 'numpre#can_answer'
   post 'numpre/answer_test' =>'numpre#answer_test'
 
 
-  get 'numpre/:id' =>'numpre#test_show'
+  get 'numpre/:id' =>'numpre#show'
 end

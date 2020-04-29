@@ -1,46 +1,135 @@
-<h1>作成された問題:
 
-
+<%= stylesheet_link_tag 'numpre' %>
+<% @element_a = ElementA.find_by(numpre_id: params[:id]) %>
+<% @element_b = ElementB.find_by(numpre_id: params[:id]) %>
+<% @element_c = ElementC.find_by(numpre_id: params[:id]) %>
+<% @element_d = ElementD.find_by(numpre_id: params[:id]) %>
+<% @element_e = ElementE.find_by(numpre_id: params[:id]) %>
+<% @element_f = ElementF.find_by(numpre_id: params[:id]) %>
+<% @element_g = ElementG.find_by(numpre_id: params[:id]) %>
+<% @element_h = ElementH.find_by(numpre_id: params[:id]) %>
+<% @element_i = ElementI.find_by(numpre_id: params[:id]) %>
+<p>Title</p>
+<h1><%= "#{@numpre.title}" %></h1>
+<div>
+    <% if @numpre.user_id %>
+        <%= link_to "#{@numpre.creater}さんのページ","/users/#{@numpre.user_id}/show" %>
+    <% end %>
+</div>
 <br>
-<br>
-
-<table bgcolor="#cceeee" border="1" cellspacing="0" id="Main_panel" style="cursor: pointer; margin:0 auto;">
-    <tbody>
-        <tr>
-            <td>
-                <table width="110" bgcolor="#cceeee" cellspacing="1" style="font-size:20pt; font-weight:700;">
-                    <tbody>
-                        <tr>
-                            <td  bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><%= @numpre.number1 %></td>
-                            <td  bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><%= @numpre.number2 %></td>
-                            <td  bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><%= @numpre.number3 %></td>
-                        </tr>
-                        <tr>
-                            <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><%= @numpre.number4 %></td>
-                            <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><%= @numpre.number5 %></td>
-                            <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><%= @numpre.number6 %></td>
-                        </tr>
-                        <tr>
-                            <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><%= @numpre.number7 %></td>
-                            <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><%= @numpre.number8 %></td>
-                            <td bgcolor="#ffffff" width="33" height="33" align="center" valign="bottom" id="box1-1" onclick="cellClick(0)"><%= @numpre.number9 %></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
+<div class="game_panel">
+    <table  class="numpre_panel"> 
+        <tbody>
+            <tr class="game_line">
+                <td class="number_cell"><%= @element_a.a_a %></td>
+                <td class="number_cell"><%= @element_a.a_b %></td>
+                <td class="number_cell"><%= @element_a.a_c %></td>
+                <td class="number_cell"><%= @element_a.a_d %></td>
+                <td class="number_cell"><%= @element_a.a_e %></td>
+                <td class="number_cell"><%= @element_a.a_f %></td>
+                <td class="number_cell"><%= @element_a.a_g %></td>
+                <td class="number_cell"><%= @element_a.a_h %></td>
+                <td class="number_cell"><%= @element_a.a_i %></td>
+            </tr>
+            <tr class="game_line">
+                <td class="number_cell"><%= @element_b.b_a %></td>
+                <td class="number_cell"><%= @element_b.b_b %></td>
+                <td class="number_cell"><%= @element_b.b_c %></td>
+                <td class="number_cell"><%= @element_b.b_d %></td>
+                <td class="number_cell"><%= @element_b.b_e %></td>
+                <td class="number_cell"><%= @element_b.b_f %></td>
+                <td class="number_cell"><%= @element_b.b_g %></td>
+                <td class="number_cell"><%= @element_b.b_h %></td>
+                <td class="number_cell"><%= @element_b.b_i %></td>
+            </tr>
+            <tr class="game_line">
+                <td class="number_cell" style="border-bottom:2px solid black;"><%= @element_c.c_a %></td>
+                <td class="number_cell" style="border-bottom:2px solid black;"><%= @element_c.c_b %></td>
+                <td class="number_cell" style="border-bottom:2px solid black;"><%= @element_c.c_c %></td>
+                <td class="number_cell" style="border-bottom:2px solid black;"><%= @element_c.c_d %></td>
+                <td class="number_cell" style="border-bottom:2px solid black;"><%= @element_c.c_e %></td>
+                <td class="number_cell" style="border-bottom:2px solid black;"><%= @element_c.c_f %></td>
+                <td class="number_cell" style="border-bottom:2px solid black;"><%= @element_c.c_g %></td>
+                <td class="number_cell" style="border-bottom:2px solid black;"><%= @element_c.c_h %></td>
+                <td class="number_cell" style="border-bottom:2px solid black;"><%= @element_c.c_i %></td>
+            </tr>
+            <tr class="game_line" >
+                <td class="number_cell" ><%= @element_d.d_a %></td>
+                <td class="number_cell" ><%= @element_d.d_b %></td>
+                <td class="number_cell" ><%= @element_d.d_c %></td>
+                <td class="number_cell" ><%= @element_d.d_d %></td>
+                <td class="number_cell" ><%= @element_d.d_e %></td>
+                <td class="number_cell" ><%= @element_d.d_f %></td>
+                <td class="number_cell" ><%= @element_d.d_g %></td>
+                <td class="number_cell" ><%= @element_d.d_h %></td>
+                <td class="number_cell" ><%= @element_d.d_i %></td>
+            </tr>
+            <tr class="game_line">
+                <td class="number_cell"><%= @element_e.e_a %></td>
+                <td class="number_cell"><%= @element_e.e_b %></td>
+                <td class="number_cell"><%= @element_e.e_c %></td>
+                <td class="number_cell"><%= @element_e.e_d %></td>
+                <td class="number_cell"><%= @element_e.e_e %></td>
+                <td class="number_cell"><%= @element_e.e_f %></td>
+                <td class="number_cell"><%= @element_e.e_g %></td>
+                <td class="number_cell"><%= @element_e.e_h %></td>
+                <td class="number_cell"><%= @element_e.e_i %></td>
+            </tr>
+            <tr class="game_line">
+                <td class="number_cell" style="border-bottom:2px solid black;"><%= @element_f.f_a %></td>
+                <td class="number_cell" style="border-bottom:2px solid black;"><%= @element_f.f_b %></td>
+                <td class="number_cell" style="border-bottom:2px solid black;"><%= @element_f.f_c %></td>
+                <td class="number_cell" style="border-bottom:2px solid black;"><%= @element_f.f_d %></td>
+                <td class="number_cell" style="border-bottom:2px solid black;"><%= @element_f.f_e %></td>
+                <td class="number_cell" style="border-bottom:2px solid black;"><%= @element_f.f_f %></td>
+                <td class="number_cell" style="border-bottom:2px solid black;"><%= @element_f.f_g %></td>
+                <td class="number_cell" style="border-bottom:2px solid black;"><%= @element_f.f_h %></td>
+                <td class="number_cell" style="border-bottom:2px solid black;"><%= @element_f.f_i %></td>
+            </tr>
+            <tr class="game_line">
+                <td class="number_cell"><%= @element_g.g_a %></td>
+                <td class="number_cell"><%= @element_g.g_b %></td>
+                <td class="number_cell"><%= @element_g.g_c %></td>
+                <td class="number_cell"><%= @element_g.g_d %></td>
+                <td class="number_cell"><%= @element_g.g_e %></td>
+                <td class="number_cell"><%= @element_g.g_f %></td>
+                <td class="number_cell"><%= @element_g.g_g %></td>
+                <td class="number_cell"><%= @element_g.g_h %></td>
+                <td class="number_cell"><%= @element_g.g_i %></td>
+            </tr>
+            <tr class="game_line">
+                <td class="number_cell"><%= @element_h.h_a %></td>
+                <td class="number_cell"><%= @element_h.h_b %></td>
+                <td class="number_cell"><%= @element_h.h_c %></td>
+                <td class="number_cell"><%= @element_h.h_d %></td>
+                <td class="number_cell"><%= @element_h.h_e %></td>
+                <td class="number_cell"><%= @element_h.h_f %></td>
+                <td class="number_cell"><%= @element_h.h_g %></td>
+                <td class="number_cell"><%= @element_h.h_h %></td>
+                <td class="number_cell"><%= @element_h.h_i %></td>
+            </tr>
+            <tr class="game_line">
+                <td class="number_cell" style="border-bottom:0;"><%= @element_i.i_a %></td>
+                <td class="number_cell" style="border-bottom:0;"><%= @element_i.i_b %></td>
+                <td class="number_cell" style="border-bottom:0;"><%= @element_i.i_c %></td>
+                <td class="number_cell" style="border-bottom:0;"><%= @element_i.i_d %></td>
+                <td class="number_cell" style="border-bottom:0;"><%= @element_i.i_e %></td>
+                <td class="number_cell" style="border-bottom:0;"><%= @element_i.i_f %></td>
+                <td class="number_cell" style="border-bottom:0;"><%= @element_i.i_g %></td>
+                <td class="number_cell" style="border-bottom:0;"><%= @element_i.i_h %></td>
+                <td class="number_cell" style="border-bottom:0;"><%= @element_i.i_i %></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 <% current_user=User.find_by(id: session[:user_id]) %>
 
-
-
 <% if current_user %>
-    <% if current_user.id == @numpre.user_id %>
-        <span>こんにちは、問題の作者の</span>
-    <% end %>
-    "<%= current_user.name %>"さん。
+    こんにちは
+        <% if @numpre.user_id == current_user.id  %>
+            <span>作者の</span>
+        <% end %>
+    <%= current_user.name %>さん。
 <% else %>
     <div> あなたはゲストさんです。</div>
 <% end %>
@@ -48,8 +137,9 @@
 <div>
     <% if current_user %>
         <% if current_user.id == @numpre.user_id then %>
-            <%= link_to '削除',"/numpre/destroy/#{@numpre.id}",{method:"post"}  %>
-            <%= link_to '編集', "/numpre/edit/#{@numpre.id}" %>
+        <%= link_to '編集', "/numpre/edit/#{@numpre.id}" %>
+        <%= link_to '削除',"/numpre/destroy/#{@numpre.id}",{method:"post"}  %>
+            
         <% else %>
             <p>こちらの問題は別の人が作った物ですので、編集はできません</p>
         <% end %>
@@ -58,4 +148,3 @@
     <% end %>
     
 </div>
-

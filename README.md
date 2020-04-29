@@ -4,8 +4,9 @@ This README would normally document whatever steps are necessary to get the
 application up and running.
 
 数独投稿サイトの雛形です。
-2020/04/19時点では、９*９の完璧な数独投稿システムは完成しておりません。
-また、下部分にボタンを作成しましたが、そちらも見た目だけで中身は動作しておりません。
+また、下部分にボタンを作成しましたが、そちらも見た目だけで中身は動作しておりません
+
+2020/04/25 "made numpre panel"(ver.2.0):９*９のパネルが完成しました。CRUDのうち、作成と参照が可能な状態です。
 
 Things you may want to cover:
 
