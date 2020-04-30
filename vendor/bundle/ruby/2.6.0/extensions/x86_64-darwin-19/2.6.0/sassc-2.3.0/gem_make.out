@@ -1,5 +1,5 @@
 current directory: /Users/daiji/puzzle-remake/vendor/bundle/ruby/2.6.0/gems/sassc-2.3.0/ext
-/Users/daiji/.rbenv/versions/2.6.3/bin/ruby -I /Users/daiji/.rbenv/versions/2.6.3/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200427-38307-llv4fh.rb extconf.rb
+/Users/daiji/.rbenv/versions/2.6.3/bin/ruby -I /Users/daiji/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20200429-84855-1gqkbdc.rb extconf.rb
 creating Makefile
 
 current directory: /Users/daiji/puzzle-remake/vendor/bundle/ruby/2.6.0/gems/sassc-2.3.0/ext
@@ -79,4 +79,4 @@ linking shared-object sassc/libsass.bundle
 
 current directory: /Users/daiji/puzzle-remake/vendor/bundle/ruby/2.6.0/gems/sassc-2.3.0/ext
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 libsass.bundle ./.gem.20200427-38307-1ly4vp8/sassc
+/usr/bin/install -c -m 0755 libsass.bundle ./.gem.20200429-84855-zq8qaq/sassc

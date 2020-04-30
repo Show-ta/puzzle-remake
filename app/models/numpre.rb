@@ -9,4 +9,5 @@ class Numpre < ApplicationRecord
     has_one :element_h
     has_one :element_i
     belongs_to :user
+    has_many :likes
 end

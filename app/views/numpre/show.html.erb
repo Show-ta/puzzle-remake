@@ -1,5 +1,6 @@
 
 <%= stylesheet_link_tag 'numpre' %>
+<%= javascript_include_tag "numpre.js" %>
 <% @element_a = ElementA.find_by(numpre_id: params[:id]) %>
 <% @element_b = ElementB.find_by(numpre_id: params[:id]) %>
 <% @element_c = ElementC.find_by(numpre_id: params[:id]) %>
@@ -135,6 +136,13 @@
 <% end %>
 
 <div>
+<% if Like.find_by(user_id:current_user.id, numpre_id:@numpre.id) %>
+    <%= link_to 'お気に入りしてるよ',"/like/#{@numpre.id}/destroy",{method:"post"} %>
+<% else %>
+    <%= link_to 'お気に入り',"/like/#{@numpre.id}",{method:"post"} %>
+<% end %>
+</div>
+<div>
     <% if current_user %>
         <% if current_user.id == @numpre.user_id then %>
         <%= link_to '編集', "/numpre/edit/#{@numpre.id}" %>
@@ -148,3 +156,9 @@
     <% end %>
     
 </div>
+
+
+
+<h1>jquery導入確認</h1>
+<p id="test_1">赤くなるかな？</p>
+

@@ -14,5 +14,14 @@
         <%= link_to "#{@numpre.title}","/numpre/show/#{@numpre.id}" %>
     </li>
 <% end %>
-
-
+<br>
+<h2><%= "#{@user.name}" %>さんがお気に入りした作品</h2>
+<% if @like == nil %>
+    <h3>お気に入りした作品はありません</h3>
+<% else %>
+    <% @like.each do |like| %>
+        <% numpre = Numpre.find_by(id: like.numpre_id) %>
+        <%= link_to "#{numpre.title}","/numpre/show/#{numpre.id}" %>
+        <br>
+    <% end %>
+<% end %>

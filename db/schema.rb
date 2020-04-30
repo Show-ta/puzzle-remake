@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_23_135228) do
+ActiveRecord::Schema.define(version: 2020_04_29_090704) do
 
   create_table "element_as", force: :cascade do |t|
     t.integer "a_a"
@@ -147,6 +147,13 @@ ActiveRecord::Schema.define(version: 2020_04_23_135228) do
     t.integer "numpre_id"
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "numpre_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "numpres", force: :cascade do |t|
     t.integer "user"
     t.text "create"
@@ -167,6 +174,9 @@ ActiveRecord::Schema.define(version: 2020_04_23_135228) do
     t.text "number9"
     t.string "creater"
     t.integer "user_id"
+    t.text "tag"
+    t.integer "level"
+    t.integer "mark"
   end
 
   create_table "users", force: :cascade do |t|

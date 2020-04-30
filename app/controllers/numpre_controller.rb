@@ -17,6 +17,8 @@ class NumpreController < ApplicationController
       @numpre.creater = @user.name
       @numpre.user_id = @user.id
     end
+
+    
     @numpre.save!
     @element_a=ElementA.create(
       a_a: params[:a_a],
@@ -135,6 +137,9 @@ class NumpreController < ApplicationController
     )
     @element_i.numpre_id = @numpre.id
     @element_i.save
+
+
+
     redirect_to("/numpre/index")
   end
 
@@ -176,8 +181,25 @@ class NumpreController < ApplicationController
     redirect_to("/numpre/index")
   end
 
-
-
+  def like
+      @user=User.find_by(id: session[:user_id])
+      @like = Like.new(
+        user_id: @user.id,
+        numpre_id: params[:numpre_id]
+      )
+      @like.save
+      redirect_back(fallback_location: root_path)
+  end
+    
+  def destroy_like
+    @user=User.find_by(id: session[:user_id])
+    @like=Like.find_by(
+      user_id: @user.id,
+      numpre_id: params[:numpre_id]
+    )
+    @like.destroy
+    redirect_back(fallback_location: root_path)
+  end
 
 
   private

@@ -30,6 +30,9 @@ Rails.application.routes.draw do
   get 'numpre/can_answer' => 'numpre#can_answer'
   post 'numpre/answer_test' =>'numpre#answer_test'
 
+  post 'like/:numpre_id' => 'numpre#like'
+  post 'like/:numpre_id/destroy' => 'numpre#destroy_like'
+
 
   get 'numpre/:id' =>'numpre#show'
 end
