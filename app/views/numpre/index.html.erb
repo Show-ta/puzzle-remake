@@ -1,7 +1,7 @@
 
 
 <h1>論理的な思考無き数独は数独にあらず</h1>
-<h2>仮定法を使わずに解ける数独のみが集まるサイトです</h2>
+<h2>仮定法を使わずに解ける数独のみが集まるサイト</h2>
 <% link_to '問題作成',numpre_new_path %>
 <%= link_to 'ユーザー登録',users_new_path %>
 <%= link_to 'ログイン',login_path %>
@@ -12,14 +12,20 @@
 
 
  <% @numpre.each do |numpre| %>
-    <div>
-        <%= link_to "#{numpre.title}" , "/numpre/show/#{numpre.id}" %>
-        <%= "#{numpre.creater}" %>
-        <% if Like.find_by(user_id: current_user.id,numpre_id:numpre.id) %>
-            <%= link_to 'お気に入りしてるよ',"/like/#{numpre.id}/destroy",{method:"post"} %>
-        <% else %>
-            <%= link_to 'お気に入り',"/like/#{numpre.id}",{method:"post"} %>
+    <div class="linkbox">
+        <div>
+            <%= link_to "#{numpre.title}" , "/numpre/show/#{numpre.id}" %>
+        </div>
+        <div>作者：<%= "#{numpre.creater}" %></div>
+        <div>
+        <% if current_user %>
+            <% if Like.find_by(user_id: current_user.id,numpre_id:numpre.id) %>
+                <%= link_to 'お気に入り削除',"/like/#{numpre.id}/destroy",{method:"post"} %>
+            <% else %>
+                <%= link_to 'お気に入りに追加',"/like/#{numpre.id}",{method:"post"} %>
+            <% end %>
         <% end %>
+        </div>
     </div>
     
  <% end %>

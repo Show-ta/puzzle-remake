@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'numpre#index'
 
   get 'users/new' => 'users#new'
+  post 'users/create' => 'users#create'
   get 'users/show'
   get 'signup' =>'users#new'
   post 'users/new' =>'users#new'

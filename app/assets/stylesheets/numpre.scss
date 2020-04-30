@@ -8,6 +8,30 @@
     width:100px;
 }
 
+.linkbox {
+    position: relative;
+    margin: 2em auto;
+    padding: 15px 15px 15px 35px;
+    width: 40%;
+    background-color: #F0F8FF;
+    color: #666;
+    border: 1px solid #88b5d3; 
+    box-shadow: 0 0 2px 1px #ccc;
+    border-radius: 10px;
+   }
+   .linkbox::before {
+    position: absolute;
+    content: "";
+    left: 8px;
+    top: 8px;
+    width: 17px;
+    height : 17px;
+    background-color: #fff;
+    box-shadow: 0 0 8px #aaa inset;
+    border: 1px solid #88b5d3;
+    border-radius: 50%;
+   }
+
 .form{
     font-size:30px;
     width:270px;

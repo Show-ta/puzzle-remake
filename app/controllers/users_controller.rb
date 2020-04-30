@@ -1,13 +1,15 @@
 class UsersController < ApplicationController
   def new
+  end
+
+  def create
     @user = User.new
     @user.name = params[:name]
     @user.password = params[:password]
     @user.save
     session[:user_id]=@user.id
     flash[:notice]="登録完了しました"
-  
-    
+    redirect_to("/numpre/index")
   end
 
   def move

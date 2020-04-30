@@ -27,6 +27,12 @@
       </div>
     <% end %>
     </div>
+
+    <% if flash[:notice] %>
+    <div class="flash">
+      <p class="flash_text"><%= flash[:notice] %></p>
+    </div>
+    <% end %>
   </head>
 
   <body>

@@ -1,3 +1,15 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.flash{
+    background-color:rgba(248, 161, 89, 0.877);
+    height:80px;
+}
+
+.flash_text{
+    font-size:35px;
+    position:absolute;
+    top:30px;
+    left:40%;
+}

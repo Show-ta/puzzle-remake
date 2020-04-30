@@ -16,6 +16,9 @@ class NumpreController < ApplicationController
       @user=User.find_by(id: session[:user_id])
       @numpre.creater = @user.name
       @numpre.user_id = @user.id
+    else
+      @numpre.creater = "ゲストさん"
+      @numpre.user_id = 1
     end
 
     
