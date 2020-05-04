@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root 'numpre#index'
-
+  get '/' => 'numpre#index'
   get 'users/new' => 'users#new'
   post 'users/create' => 'users#create'
   get 'users/show'
